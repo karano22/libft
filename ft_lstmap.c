@@ -19,6 +19,8 @@ static t_list	*ft_map_one(void *content, void *(*f)(void *),
 	t_list	*created;
 
 	value = f(content);
+	if (!value)
+		return (NULL);
 	created = ft_lstnew(value);
 	if (!created)
 		del(value);
